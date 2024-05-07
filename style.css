@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: "80% 20%";
+  grid-template-areas:
+    "cl1 cl2 cl3 cl4 cl5"
+    "ft1 ft2 ft3 ft4 ft5";
+  margin: 0;
+}
+
+.color1,
+.color2,
+.color3,
+.color4,
+.color5 {
+  height: 90vh;
+}
+.color1 {
+  grid-area: "cl1";
+}
+
+.color2 {
+  grid-area: "cl2";
+}
+
+.color3 {
+  grid-area: "cl3";
+}
+
+.color4 {
+  grid-area: "cl4";
+}
+
+.color5 {
+  grid-area: "cl5";
+}
+
+/* Information */
+
+.info1,
+.info2,
+.info3,
+.info4,
+.info5 {
+  background-color: #3b3a3a;
+  height: 10vh;
+  color: #ffffff;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  flex-direction: column;
+}
+
+p {
+  margin: 0.3rem 0 0 0;
+}
+
+.info1 {
+  grid-area: "ft1";
+}
+
+.info2 {
+  grid-area: "ft2";
+}
+
+.info3 {
+  grid-area: "ft3";
+}
+
+.info4 {
+  grid-area: "ft4";
+}
+
+.info5 {
+  grid-area: "ft5";
+}
+
+img {
+  height: 20px;
+  width: 20px;
+  margin: 0px;
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  width: 20px;
+  height: 30px;
+  bottom: 1.4rem;
+}
+
+input[type="checkbox"] + label {
+  width: 20px;
+  height: 20px;
+}
+
+input[type="checkbox"]:checked + label {
+  content: url(./images/lock.svg);
+  height: 20px;
+  width: 20px;
+}
