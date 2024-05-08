@@ -11,17 +11,18 @@ const color3 = document.querySelector(".color3");
 const color4 = document.querySelector(".color4");
 const color5 = document.querySelector(".color5");
 
-// Color Info
-const info1 = document.querySelector(".info1");
-const info2 = document.querySelector(".info2");
-const info3 = document.querySelector(".info1");
+// Targeting Lock
+const lock = document.querySelectorAll(".lock");
+
+// Color HEX code
+const p = document.querySelectorAll("p");
 
 // Random color maker
 function randomNum() {
   return Math.round(Math.random() * 255);
 }
 
-// Conversion in HEX
+// Conversion in HEX from RGB
 const calcHex = (num) => {
   let d1 = convertHEX(Math.trunc(num / 16));
   let d2 = convertHEX(Math.trunc(num % 16));
@@ -57,63 +58,79 @@ const set1 = () => {
   let r = randomNum();
   let g = randomNum();
   let b = randomNum();
-  let rgb = `rgb(${r}, ${g}, ${b})`;
   color1.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
   let hex = `#` + calcHex(r) + calcHex(g) + calcHex(b);
-  console.log(rgb, hex);
+  p[0].textContent = hex;
 };
 
 const set2 = () => {
   let r = randomNum();
   let g = randomNum();
   let b = randomNum();
-  let rgb = `rgb(${r}, ${g}, ${b})`;
   color2.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
   let hex = `#` + calcHex(r) + calcHex(g) + calcHex(b);
-  console.log(rgb, hex);
+  p[1].textContent = hex;
 };
 
 const set3 = () => {
   let r = randomNum();
   let g = randomNum();
   let b = randomNum();
-  let rgb = `rgb(${r}, ${g}, ${b})`;
   color3.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
   let hex = `#` + calcHex(r) + calcHex(g) + calcHex(b);
-  console.log(rgb, hex);
+  p[2].textContent = hex;
 };
 
 const set4 = () => {
   let r = randomNum();
   let g = randomNum();
   let b = randomNum();
-  let rgb = `rgb(${r}, ${g}, ${b})`;
   color4.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
   let hex = `#` + calcHex(r) + calcHex(g) + calcHex(b);
-  console.log(rgb, hex);
+  p[3].textContent = hex;
 };
 
 const set5 = () => {
   let r = randomNum();
   let g = randomNum();
   let b = randomNum();
-  let rgb = `rgb(${r}, ${g}, ${b})`;
   color5.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
   let hex = `#` + calcHex(r) + calcHex(g) + calcHex(b);
-  console.log(rgb, hex);
+  p[4].textContent = hex;
 };
 
 // Adding the spacebar functionality
 body.addEventListener("keyup", (e) => {
-  if (e.code === "Space") {
-    // Push the color Code
-    set1();
-    set2();
-    set3();
-    set4();
-    set5();
+  if (e.key === "c") {
+    console.log(e.key);
+    // For locking functionatlity
+    console.log(lock[0].checked);
+
+    if (!lock[0].checked) {
+      set1();
+    }
+    if (!lock[1].checked) {
+      set2();
+    }
+    if (!lock[2].checked) {
+      set3();
+    }
+    if (!lock[3].checked) {
+      set4();
+    }
+    if (!lock[4].checked) {
+      set5();
+    }
   }
 });
+
+// Copying function
+for (let i = 0; i < 5; i++) {
+  p[i].addEventListener("click", () => {
+    let z = p[i].textContent;
+    navigator.clipboard.writeText(z);
+  });
+}
 
 set1();
 set2();
