@@ -7,38 +7,40 @@ body {
   height: 100%;
   width: 100%;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: "80% 20%";
+  grid-template-rows: 85% 15%;
   grid-template-areas:
     "cl1 cl2 cl3 cl4 cl5"
     "ft1 ft2 ft3 ft4 ft5";
   margin: 0;
 }
 
+/* Color Output */
+
 .color1,
 .color2,
 .color3,
 .color4,
 .color5 {
-  height: 90vh;
+  height: 85svh;
 }
 .color1 {
-  grid-area: "cl1";
+  grid-area: cl1;
 }
 
 .color2 {
-  grid-area: "cl2";
+  grid-area: cl2;
 }
 
 .color3 {
-  grid-area: "cl3";
+  grid-area: cl3;
 }
 
 .color4 {
-  grid-area: "cl4";
+  grid-area: cl4;
 }
 
 .color5 {
-  grid-area: "cl5";
+  grid-area: cl5;
 }
 
 /* Information */
@@ -49,7 +51,6 @@ body {
 .info4,
 .info5 {
   background-color: #3b3a3a;
-  height: 10vh;
   color: #ffffff;
   font-family: "Quicksand", sans-serif;
   font-weight: 500;
@@ -58,6 +59,7 @@ body {
   align-items: center;
   cursor: pointer;
   flex-direction: column;
+  height: 15svh;
 }
 
 p {
@@ -65,23 +67,23 @@ p {
 }
 
 .info1 {
-  grid-area: "ft1";
+  grid-area: ft1;
 }
 
 .info2 {
-  grid-area: "ft2";
+  grid-area: ft2;
 }
 
 .info3 {
-  grid-area: "ft3";
+  grid-area: ft3;
 }
 
 .info4 {
-  grid-area: "ft4";
+  grid-area: ft4;
 }
 
 .info5 {
-  grid-area: "ft5";
+  grid-area: ft5;
 }
 
 img {
@@ -92,20 +94,49 @@ img {
 
 input[type="checkbox"] {
   position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  width: 20px;
-  height: 30px;
-  bottom: 1.4rem;
+  opacity: 1;
+  height: 48px;
+  width: 21px;
+  bottom: 1.3rem;
+  margin: 0;
+  right: 200rem;
 }
 
-input[type="checkbox"] + label {
+input[type="checkbox"].lock + label {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+input[type="checkbox"].lock + label:checked {
   width: 20px;
   height: 20px;
 }
 
-input[type="checkbox"]:checked + label {
+input[type="checkbox"].lock:checked + label {
   content: url(./images/lock.svg);
   height: 20px;
   width: 20px;
+}
+
+.edit-txt {
+  position: absolute;
+  height: 1.6rem;
+  width: 7.5rem;
+}
+
+.edit-icon + label {
+  content: url(./images/edit.svg);
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.edit-icon:checked + label {
+  background-color: red;
+}
+
+form {
+  display: flex;
+  justify-content: center;
 }
