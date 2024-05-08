@@ -113,7 +113,7 @@ input[type="checkbox"].lock + label {
   cursor: pointer;
 }
 
-img:hover {
+img.unlock-icon:hover {
   transform: scale(1.3);
 }
 
@@ -159,4 +159,20 @@ form {
 .icon {
   margin: 0 0 0.5rem 0;
   user-select: none;
+}
+
+/* Button to change color */
+.ch-color {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  height: 2rem;
+  width: 2rem;
+  box-shadow: 0 0 15px 8px rgb(179, 177, 177);
+  border-radius: 500px;
+  cursor: pointer;
+}
+
+.ch-color:hover {
+  transform: scale(1.2);
 }

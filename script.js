@@ -99,30 +99,34 @@ const set5 = () => {
   p[4].textContent = hex;
 };
 
-// Adding the spacebar functionality
+// Adding the color change functionality
 body.addEventListener("keyup", (e) => {
   if (e.key === "c") {
-    console.log(e.key);
-    // For locking functionatlity
-    console.log(lock[0].checked);
-
-    if (!lock[0].checked) {
-      set1();
-    }
-    if (!lock[1].checked) {
-      set2();
-    }
-    if (!lock[2].checked) {
-      set3();
-    }
-    if (!lock[3].checked) {
-      set4();
-    }
-    if (!lock[4].checked) {
-      set5();
-    }
+    checkLock();
   }
 });
+
+document.querySelector(".ch-color").addEventListener("click", () => {
+  checkLock();
+});
+
+const checkLock = () => {
+  if (!lock[0].checked) {
+    set1();
+  }
+  if (!lock[1].checked) {
+    set2();
+  }
+  if (!lock[2].checked) {
+    set3();
+  }
+  if (!lock[3].checked) {
+    set4();
+  }
+  if (!lock[4].checked) {
+    set5();
+  }
+};
 
 // Copying function
 for (let i = 0; i < 5; i++) {
