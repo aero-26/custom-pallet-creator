@@ -185,7 +185,6 @@ document.querySelector("#lock5").addEventListener("click", () => {
 // Checking for local storage
 
 if (localStorage.getItem("hex1")) {
-  console.log(localStorage.getItem("hex1"));
   color1.style.backgroundColor = localStorage.getItem("hex1");
   p[0].textContent = localStorage.getItem("hex1");
   lock[0].checked = true;
@@ -195,7 +194,6 @@ if (!localStorage.getItem("hex1")) {
 }
 
 if (localStorage.getItem("hex2")) {
-  console.log(localStorage.getItem("hex2"));
   color2.style.backgroundColor = localStorage.getItem("hex2");
   p[1].textContent = localStorage.getItem("hex2");
   lock[1].checked = true;
@@ -205,7 +203,6 @@ if (!localStorage.getItem("hex2")) {
 }
 
 if (localStorage.getItem("hex3")) {
-  console.log(localStorage.getItem("hex3"));
   color3.style.backgroundColor = localStorage.getItem("hex3");
   p[2].textContent = localStorage.getItem("hex3");
   lock[2].checked = true;
@@ -215,7 +212,6 @@ if (!localStorage.getItem("hex3")) {
 }
 
 if (localStorage.getItem("hex4")) {
-  console.log(localStorage.getItem("hex4"));
   color4.style.backgroundColor = localStorage.getItem("hex4");
   p[3].textContent = localStorage.getItem("hex4");
   lock[3].checked = true;
@@ -225,7 +221,6 @@ if (!localStorage.getItem("hex4")) {
 }
 
 if (localStorage.getItem("hex5")) {
-  console.log(localStorage.getItem("hex5"));
   color5.style.backgroundColor = localStorage.getItem("hex5");
   p[4].textContent = localStorage.getItem("hex5");
   lock[4].checked = true;
