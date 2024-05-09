@@ -106,10 +106,12 @@ body.addEventListener("keyup", (e) => {
   }
 });
 
+// Adding the color change functionality to the change icon
 document.querySelector(".ch-color").addEventListener("click", () => {
   checkLock();
 });
 
+// Conditions to change color
 const checkLock = () => {
   if (!lock[0].checked) {
     set1();
@@ -128,6 +130,110 @@ const checkLock = () => {
   }
 };
 
+// Setting Local Storage for Colors
+
+// For color 1
+document.querySelector("#lock1").addEventListener("click", () => {
+  if (lock[0].checked) {
+    localStorage.setItem("hex1", p[0].textContent);
+  }
+  if (!lock[0].checked) {
+    localStorage.removeItem("hex1");
+  }
+});
+
+// For color 2
+document.querySelector("#lock2").addEventListener("click", () => {
+  if (lock[1].checked) {
+    localStorage.setItem("hex2", p[1].textContent);
+  }
+  if (!lock[1].checked) {
+    localStorage.removeItem("hex2");
+  }
+});
+
+// For color 3
+document.querySelector("#lock3").addEventListener("click", () => {
+  if (lock[2].checked) {
+    localStorage.setItem("hex3", p[2].textContent);
+  }
+  if (!lock[2].checked) {
+    localStorage.removeItem("hex3");
+  }
+});
+
+// For color 4
+document.querySelector("#lock4").addEventListener("click", () => {
+  if (lock[3].checked) {
+    localStorage.setItem("hex4", p[3].textContent);
+  }
+  if (!lock[3].checked) {
+    localStorage.removeItem("hex4");
+  }
+});
+
+// For color 5
+document.querySelector("#lock5").addEventListener("click", () => {
+  if (lock[4].checked) {
+    localStorage.setItem("hex5", p[4].textContent);
+  }
+  if (!lock[4].checked) {
+    localStorage.removeItem("hex5");
+  }
+});
+
+// Checking for local storage
+
+if (localStorage.getItem("hex1")) {
+  console.log(localStorage.getItem("hex1"));
+  color1.style.backgroundColor = localStorage.getItem("hex1");
+  p[0].textContent = localStorage.getItem("hex1");
+  lock[0].checked = true;
+}
+if (!localStorage.getItem("hex1")) {
+  set1();
+}
+
+if (localStorage.getItem("hex2")) {
+  console.log(localStorage.getItem("hex2"));
+  color2.style.backgroundColor = localStorage.getItem("hex2");
+  p[1].textContent = localStorage.getItem("hex2");
+  lock[1].checked = true;
+}
+if (!localStorage.getItem("hex2")) {
+  set2();
+}
+
+if (localStorage.getItem("hex3")) {
+  console.log(localStorage.getItem("hex3"));
+  color3.style.backgroundColor = localStorage.getItem("hex3");
+  p[2].textContent = localStorage.getItem("hex3");
+  lock[2].checked = true;
+}
+if (!localStorage.getItem("hex3")) {
+  set3();
+}
+
+if (localStorage.getItem("hex4")) {
+  console.log(localStorage.getItem("hex4"));
+  color4.style.backgroundColor = localStorage.getItem("hex4");
+  p[3].textContent = localStorage.getItem("hex4");
+  lock[3].checked = true;
+}
+if (!localStorage.getItem("hex4")) {
+  set4();
+}
+
+if (localStorage.getItem("hex5")) {
+  console.log(localStorage.getItem("hex5"));
+  color5.style.backgroundColor = localStorage.getItem("hex5");
+  p[4].textContent = localStorage.getItem("hex5");
+  lock[4].checked = true;
+}
+if (!localStorage.getItem("hex5")) {
+  set5();
+}
+
 // Copying function
 for (let i = 0; i < 5; i++) {
   p[i].addEventListener("click", () => {
@@ -135,9 +241,3 @@ for (let i = 0; i < 5; i++) {
     navigator.clipboard.writeText(z);
   });
 }
-
-set1();
-set2();
-set3();
-set4();
-set5();
